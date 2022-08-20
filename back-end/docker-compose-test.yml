@@ -6,7 +6,7 @@ services:
     ports:
       - 4455:5432
     env_file:
-      - .env
+      - .env.test
     volumes:
       - postgres_db:/var/lib/postgresql/data
 
@@ -18,7 +18,7 @@ services:
     depends_on:
       - postgres_db
     env_file:
-      - .env
+      - .env.test
 
 volumes:
   postgres_db:

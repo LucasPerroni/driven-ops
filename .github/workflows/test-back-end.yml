@@ -14,7 +14,8 @@ jobs:
           envkey_POSTGRES_DB: ${{secrets.POSTGRES_DB_TEST}}
           envkey_DATABASE_URL: ${{secrets.DATABASE_URL_TEST}}
           file_name: .env.test
+          directory: ./back-end/
       - name: Run tests
         run: cd ./back-end/ ; docker-compose -f docker-compose-test.yml run app_node npm run test
       - name: Build
-        run: npm i && npm run build
+        run: cd ./back-end/ ; npm i && npm run build
